@@ -12,34 +12,23 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+  return view('welcome');
 });
 
-Route::group(['prefix' => 'admin'],function(){
-    Route::get('news/create','Admin\NewsController@add');
+Route::group(['prefix' => 'admin' ,'middleware' => 'auth'], function() {
+  Route::get('news/create', 'Admin\NewsController@add');
+  Route::post('news/create', 'Admin\NewsController@create');
 });
 
-Route::get('http://XXXXXX.jp/XXX', 'Admin\AAAContrller@bbb');
-
-Route::get('admin/profile/create', 'Admin\ProfileController@add');
-
-Route::get('admin/profile/edit', 'Admin\ProfileController@edit');
-
-Route::group(['prefix' => 'admin'], function() {
-
-Route::get('news/create', 'Admin\NewsController@add')->middleware('auth');
-    });
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route ::group(['prefix' => 'admin'], function() {
-     Route::get('profile/create', 'Admin\ProfileController@add' )->middleware('auth');
-   });
-
-Route::group(['prefix' => 'admin'], function() {
-     Route::get('profile/edit', 'Admin\ProfileController@edit')->middleware('auth');
-   });
-
+  Route::get('profile/create', 'Admin\ProfileController@add' )->middleware('auth');
+  Route::get('profile/edit', 'Admin\ProfileController@edit')->middleware('auth');
+  Route::post('profile/create', 'Admin\ProfileController@create' )->middleware('auth');
+  Route::post('profile/edit', 'Admin\ProfileController@update')->middleware('auth');
+});
 
 ?>
