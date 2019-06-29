@@ -48,9 +48,9 @@
 
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                              <a class="dropdpwn-item" href="{{ route('logput') }}"
-                                  oneclick="event.preventDefault();
-                                                 document.getElementByID('logout-form').submit();">
+                              <a class="dropdpwn-item" href="{{ route('logout') }}"
+                                  onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
 
                                       {{ __('Logout') }}
                               </a>
@@ -60,7 +60,7 @@
                               </form>
                             </div>
                           </li>
-                          @endguest                   
+                          @endguest
                    </ul>
 
                  </div>
