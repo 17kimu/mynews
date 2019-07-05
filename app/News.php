@@ -13,3 +13,4 @@ class News extends Model
       'body' => 'required',
     );
 }
+?>

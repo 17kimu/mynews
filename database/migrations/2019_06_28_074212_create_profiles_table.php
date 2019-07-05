@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -14,10 +13,12 @@ class CreateProfilesTable extends Migration
     public function up()
     {
         Schema::create('profiles', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('name');
             $table->string('gender');
             $table->string('hobby');
             $table->string('introduction');
+            $table->timestamps();
         });
     }
 
@@ -31,3 +32,4 @@ class CreateProfilesTable extends Migration
         Schema::dropIfExists('profiles');
     }
 }
+?>
