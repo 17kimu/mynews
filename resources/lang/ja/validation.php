@@ -21,14 +21,6 @@ return [
     'alpha_dash' => 'The :attribute may only contain letters, numbers, dashes and underscores.',
     'alpha_num' => 'The :attribute may only contain letters and numbers.',
     'array' => 'The :attribute must be an array.',
-    'attributes' => [
-      'title' => 'タイトル',
-      'body' => '本文',
-      'name' =>'氏名',
-      'gender' => '性別',
-      'hobby' => '趣味',
-      'introduction' => '自己紹介'
-    ],
     'before' => 'The :attribute must be a date before :date.',
     'before_or_equal' => 'The :attribute must be a date before or equal to :date.',
     'between' => [
@@ -153,6 +145,13 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+      'title' => 'タイトル',
+      'body' => '本文',
+      'name' => '氏名',
+      'gender' =>'性別',
+      'hobby' =>'趣味',
+      'introduction' =>'自己紹介'
+    ],
 
 ];

@@ -19,7 +19,7 @@
         <div class ="from-gruop row">
           <label class ="col-md-2" for ="title">タイトル</label>
           <div class ="col-md-10">
-            <input type ="text" class ="form-cotrol" name ="title" value ="{{ news_form->title }}">
+            <input type ="text" class ="form-cotrol" name ="title" value ="{{ $news_form->title }}">
           </div>
         </div>
         <div class ="form-group row">
