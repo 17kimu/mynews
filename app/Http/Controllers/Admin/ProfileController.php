@@ -36,14 +36,14 @@ class ProfileController extends Controller
     }
     public function update(Request $request)
     {
-      $this->validate($request, Profiles::$rules);
+      $this->validate($request, Profile::$rules);
 
-      $profile = Profiles::find($request->id);
+      $profile = Profile::find($request->id);
 
       $profile_form = $request->all();
       unset($profile_form['_token']);
 
-      $profile->fill($profiles_form)->save();
+      $profile->fill($profile_form)->save();
 
       return redirect('admin/profile');
     }
