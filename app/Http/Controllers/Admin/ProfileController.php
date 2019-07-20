@@ -50,6 +50,7 @@ class ProfileController extends Controller
       $prohistory->profile_id = $profile->id;
       $prohistory->edited_at = Carbon::now();
       $prohistory->save();
+      echo "aaa";
 
       return redirect('/');
     }
